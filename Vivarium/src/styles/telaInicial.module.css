@@ -1,0 +1,18 @@
+/* Container principal com a imagem de fundo */
+.container {
+  height: 100vh; /* Ocupa 100% da altura da viewport */
+  display: flex; /* Layout flexível para centralizar o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  background-image: url('../assets/Background.jpeg'); /* Caminho da imagem de fundo */
+  background-size: cover; /* Faz a imagem cobrir todo o fundo */
+  background-position: center; /* Centraliza a imagem de fundo */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+}
+
+/* Estilo da logo centralizada */
+.logo {
+  width: 200px; /* Ajuste o tamanho da logo */
+  height: auto; /* Mantém a proporção da imagem */
+
+}

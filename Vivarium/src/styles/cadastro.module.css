@@ -1,0 +1,150 @@
+/* Cadastro.module.css */
+.container {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .rightSide {
+    display: flex;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  .rightImg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .leftSide {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    width: 50%;
+    padding: 40px;
+    background-color: #fff;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    color: #14466c;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    color: #14466c;
+    margin: 0 0 20px 0;
+    font-size: 14px;
+  }
+  
+  .label {
+    font-weight: bolder;
+    color: #14466c;
+    margin-bottom: 5px;
+  }
+  
+  .inputLeft {
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: #e1e1e1;
+    height: 60px;
+    width: 100%;
+    max-width: 500px;
+    padding-left: 14px;
+    font-size: 16px;
+  }
+  
+  .input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .side {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  .icon,
+  .showPassword {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .link {
+    color: #14466c;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .bttSignIn {
+    width: 100%;
+    max-width: 280px;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background-color: #14466c;
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+  
+  .org2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  @media (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+      overflow: auto;
+    }
+  
+    .rightSide {
+      width: 100%;
+      height: 250px;
+    }
+  
+    .rightImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .leftSide {
+      width: 100%;
+      padding: 20px;
+      align-items: center;
+    }
+  
+    .input,
+    .inputLeft,
+    .bttSignIn {
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    .title,
+    .description {
+      text-align: center;
+    }
+  }
+  

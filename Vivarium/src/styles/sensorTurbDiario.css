@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0948A5;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.stud-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* ===== ASIDE MENU ===== */
+aside {
+    width: 250px;
+    background-color: #0948A5;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stud-topo-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.stud-options {
+    width: 40vh;
+}
+
+.stud-options ul {
+    list-style: none;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stud-options li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.stud-options li:hover {
+    background-color: #023581;
+}
+
+#SENSOR1 {
+    background-color: #023581;
+}
+
+/* ===== CONTENT AREA ===== */
+.stud-content {
+    margin-top: 6%;
+    background-color: #f6f6f6;
+    border-top-left-radius: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: calc(100vh - 80px);
+}
+
+header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 80px;
+    width: 100%;
+    background-color: #0948A5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+main {
+    padding: 40px 50px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+main h2 {
+    color: #14466C;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* ===== ICON STYLES ===== */
+.stud-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.stud-icon2 {
+    height: 30px;
+    width: 30px;
+}
+
+.stud-perfil {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.stud-menu {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.stud-aside {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20%;
+}
+
+.stud-aside p {
+    font-size: 18px;
+}
+
+.stud-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.stud-title span {
+    font-size: 16px;
+    color: #ABABAB;
+}
+
+.stud-title {
+    margin-bottom: 30px;
+}
+
+.stud-card {
+    width: 100%;
+    height: 90%;
+    background-color: #E7E7E7;
+    border-radius: 20px;
+    margin-top: -50px;
+}
+
+.stud-op-up {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    gap: 10px;
+    margin-left: 0;
+}
+
+.stud-op-up button {
+    background-color: #023581;
+    border: none;
+    width: 160px;
+    height: 30px;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.stud-op-up button:hover {
+    background-color: white;
+    color: black;
+}
+
+.stud-op-up #Turbidez1 {
+    background-color: #fff;
+    color: black;
+}
+
+.stud-h1-title {
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.stud-title-with-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.stud-side-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    right: 50px;
+    bottom: 50px;
+    width: 80px;
+    height: 10px;
+}
+
+.stud-side-btn {
+    background-color: white;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+#BUTTON {
+    background-color: #E7E7E7;
+}
+
+.stud-side-btn:hover {
+    background-color: #eee;
+}
+
+.stud-chart-area {
+    height: 300px;
+    background-color: #E7E7E7;
+    margin: 20px;
+    border-radius: 10px;
+}
