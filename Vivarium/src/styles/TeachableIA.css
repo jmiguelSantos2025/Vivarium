@@ -1,0 +1,48 @@
+/* Estilo da página principal */
+.teachable-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/ProjetoP2/DSE/Vivarium/Vivarium/public/file.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 20px;
+  color: #ffffff; /* Cor de texto para contraste com o fundo */
+  backdrop-filter: brightness(0.9);
+}
+
+/* Título da página */
+.teachable-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para melhor leitura */
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* Área da webcam */
+.teachable-webcam {
+  width: 224px;
+  height: 224px;
+  margin: 20px auto;
+  border: 3px solid #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Resultados do modelo */
+.teachable-resultados {
+  font-size: 1.2em;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  width: fit-content;
+  max-width: 90%;
+}

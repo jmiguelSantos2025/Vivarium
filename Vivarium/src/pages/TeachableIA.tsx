@@ -1,29 +1,35 @@
 import React, { useEffect, useRef, useState } from "react";
-
-// @ts-ignore
 import * as tmImage from "@teachablemachine/image";
+import { ref, set } from "firebase/database";
+import { database } from "../services/firebase";
+import "../styles/TeachableIA.css";
 
-const MODEL_URL = "/model/"; // certifique-se de que model.json e metadata.json estão aqui
+const MODEL_URL = "/model/";
 
- const TeachableIA: React.FC = () => {
+const coresPorClasse: Record<string, string> = {
+  Irigar: "#4caf50",
+  IrigarDireita: "#2196f3",
+  IrigarEsquerdo: "#ff9800",
+  Parar: "#ffeb3b",
+  Fundo: "#ffffff",
+};
+
+const TeachableIA: React.FC = () => {
   const webcamRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [labels, setLabels] = useState<string[]>([]);
   const [resultados, setResultados] = useState<string[]>(["Carregando modelo..."]);
-
   const lastCommand = useRef<string>("");
   const lastCommandTime = useRef<number>(0);
 
   useEffect(() => {
     let model: any;
     let webcam: any;
-    let maxPredictions: number;
 
     const init = async () => {
       model = await tmImage.load(MODEL_URL + "model.json", MODEL_URL + "metadata.json");
-      maxPredictions = model.getTotalClasses();
-
       webcam = new tmImage.Webcam(224, 224, true);
+
       await webcam.setup();
       await webcam.play();
       requestAnimationFrame(loop);
@@ -76,21 +82,32 @@ const MODEL_URL = "/model/"; // certifique-se de que model.json e metadata.json 
       }
     };
 
-    const executarComando = (comando: string) => {
+    const executarComando = async (comando: string) => {
       console.log("Comando detectado:", comando);
+      const cor = coresPorClasse[comando] || "#ffffff";
+      document.body.style.backgroundColor = cor;
 
+      // Atualiza o Firebase conforme comando
       switch (comando) {
-        case "Ligar":
-          document.body.style.backgroundColor = "#c8f7c5";
+        case "Irigar":
+          await set(ref(database, "bomba"), true);
           break;
-        case "Desligar":
-          document.body.style.backgroundColor = "#f7c5c5";
+        case "Parar":
+          await set(ref(database, "bomba"), false);
           break;
-        case "Pausar":
-          document.body.style.backgroundColor = "#f7f3c5";
+        case "IrigarDireita":
+          await set(ref(database, "direitaServo"), true);
+          await set(ref(database, "esquerdaServo"), false);
+          break;
+        case "IrigarEsquerdo":
+          await set(ref(database, "direitaServo"), false);
+          await set(ref(database, "esquerdaServo"), true);
           break;
         default:
-          document.body.style.backgroundColor = "#ffffff";
+          // Pode resetar tudo se quiser, ou não fazer nada
+          await set(ref(database, "bomba"), false);
+          await set(ref(database, "direitaServo"), false);
+          await set(ref(database, "esquerdaServo"), false);
       }
     };
 
@@ -98,17 +115,45 @@ const MODEL_URL = "/model/"; // certifique-se de que model.json e metadata.json 
   }, []);
 
   return (
-    <div ref={containerRef} style={{ textAlign: "center", padding: 20 }}>
-      <h1>🌿 Controle de Irrigação com IA</h1>
+    <div
+      ref={containerRef}
+      className="teachable-container"
+      style={{
+        backgroundImage: "url('/assets/Background.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        padding: 20,
+        color: "#fff",
+      }}
+    >
+      <h1 className="teachable-title">🌿 Controle de Irrigação com IA</h1>
 
-      <div ref={webcamRef} style={{ margin: "20px auto", width: 224, height: 224 }} />
+      <div ref={webcamRef} className="teachable-webcam" />
 
-      <div style={{ fontSize: "1.2em", marginTop: 20 }}>
-        {resultados.map((texto, index) => (
-          <div key={index}>{texto}</div>
-        ))}
+      <div className="teachable-resultados">
+        {resultados.map((texto, index) => {
+          const classe = texto.split(":")[0];
+          const cor = coresPorClasse[classe] || "white";
+
+          return (
+            <div
+              key={index}
+              style={{ color: cor, fontWeight: "bold", margin: 4 }}
+            >
+              {texto}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 };
+
 export default TeachableIA;
