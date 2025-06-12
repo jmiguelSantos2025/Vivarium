@@ -14,8 +14,12 @@ const coresPorClasse: Record<string, string> = {
   Fundo: "#ffffff",
 };
 
+interface Metadata {
+  labels: string[];
+}
+
 const TeachableIA: React.FC = () => {
-  const webcamRef = useRef<any>(null);
+  const webcamRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [labels, setLabels] = useState<string[]>([]);
   const [resultados, setResultados] = useState<string[]>(["Carregando modelo..."]);
@@ -23,14 +27,30 @@ const TeachableIA: React.FC = () => {
   const lastCommandTime = useRef<number>(0);
 
   useEffect(() => {
-    let model: any;
-    let webcam: any;
+    let model: tmImage.CustomMobileNet;
+    let webcam: tmImage.Webcam;
+
+    const getUSBDeviceId = async (): Promise<string | undefined> => {
+      const devices = await navigator.mediaDevices.enumerateDevices();
+      const videoDevices = devices.filter(device => device.kind === "videoinput");
+
+      const usbCam = videoDevices.find(device =>
+        device.label.toLowerCase().includes("usb camera")
+      );
+
+      return usbCam?.deviceId || videoDevices[0]?.deviceId;
+    };
 
     const init = async () => {
-      model = await tmImage.load(MODEL_URL + "model.json", MODEL_URL + "metadata.json");
-      webcam = new tmImage.Webcam(224, 224, true);
+      model = await tmImage.load(
+        MODEL_URL + "model.json",
+        MODEL_URL + "metadata.json"
+      );
 
-      await webcam.setup();
+      const deviceId = await getUSBDeviceId();
+
+      webcam = new tmImage.Webcam(424, 424, true);
+      await webcam.setup({ deviceId });
       await webcam.play();
       requestAnimationFrame(loop);
 
@@ -39,7 +59,7 @@ const TeachableIA: React.FC = () => {
         webcamRef.current.appendChild(webcam.canvas);
       }
 
-      const metadata = await fetch(MODEL_URL + "metadata.json").then(res => res.json());
+      const metadata: Metadata = await fetch(MODEL_URL + "metadata.json").then(res => res.json());
       setLabels(metadata.labels);
     };
 
@@ -50,7 +70,7 @@ const TeachableIA: React.FC = () => {
     };
 
     const predict = async () => {
-      const prediction = await model.predict(webcam.canvas);
+      const prediction: tmImage.Prediction[] = await model.predict(webcam.canvas);
       const textos: string[] = [];
 
       let comandoDetectado = "";
@@ -87,7 +107,6 @@ const TeachableIA: React.FC = () => {
       const cor = coresPorClasse[comando] || "#ffffff";
       document.body.style.backgroundColor = cor;
 
-      // Atualiza o Firebase conforme comando
       switch (comando) {
         case "Irigar":
           await set(ref(database, "bomba"), true);
@@ -104,7 +123,6 @@ const TeachableIA: React.FC = () => {
           await set(ref(database, "esquerdaServo"), true);
           break;
         default:
-          // Pode resetar tudo se quiser, ou não fazer nada
           await set(ref(database, "bomba"), false);
           await set(ref(database, "direitaServo"), false);
           await set(ref(database, "esquerdaServo"), false);
