@@ -3,6 +3,7 @@ import * as tmImage from "@teachablemachine/image";
 import { ref, set } from "firebase/database";
 import { database } from "../services/firebase";
 import "../styles/TeachableIA.css";
+import { useRouter } from "next/navigation";
 
 const MODEL_URL = "/model/";
 
@@ -25,6 +26,7 @@ const TeachableIA: React.FC = () => {
   const [resultados, setResultados] = useState<string[]>(["Carregando modelo..."]);
   const lastCommand = useRef<string>("");
   const lastCommandTime = useRef<number>(0);
+  const router = useRouter();
 
   useEffect(() => {
     let model: tmImage.CustomMobileNet;

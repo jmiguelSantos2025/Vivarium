@@ -75,13 +75,8 @@ export default function SensorTemperaturaDiario() {
               <Image src="/assets/history_svgrepo.com.png" alt="Histórico" className="sted-icon2" width={30} height={30} />
               Histórico de dados
             </li>
-            <li id="ALIMENT" onClick={() => router.push("/alimentacao")}>
-              <Image src="/assets/fish_svgrepo.com.png" alt="Alimentação" className="sted-icon" width={20} height={20} />
-              Alimentação
-            </li>
-            <li id="CADESPE" onClick={() => router.push("/cadastroEspecie")}>
-              <Image src="/assets/register_svgrepo.com.png" alt="Cadastro" className="sted-icon" width={20} height={20} />
-              Cadastro de espécie
+            <li id="IA" onClick={() => router.push("/TeachableIA")}>
+              IA
             </li>
           </ul>
         </nav>
@@ -89,11 +84,7 @@ export default function SensorTemperaturaDiario() {
 
       <header>
         <Image src="/assets/Vector@2x.png" alt="Menu" className="sted-menu" width={30} height={30} />
-        <div className="sted-op-up">
-          <button id="PH" onClick={() => router.push("/sensorPhDiario")}>PH</button>
-          <button id="Temperatura1">Temperatura</button>
-          <button id="Turbidez" onClick={() => router.push("/sensorTurbDiario")}>Turbidez</button>
-        </div>
+        {/* Removidos os botões PH, Temperatura e Turbidez */}
         <Image src="/assets/perfil.png" alt="Perfil" className="sted-perfil" width={40} height={40} />
       </header>
 
