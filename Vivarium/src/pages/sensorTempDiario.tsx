@@ -76,6 +76,7 @@ export default function SensorTemperaturaDiario() {
               Histórico de dados
             </li>
             <li id="IA" onClick={() => router.push("/TeachableIA")}>
+              <img src="/assets/icons8-inteligência-artificial-100.png" style={{width: "25px",height: "25px",}} alt="IA" />
               IA
             </li>
           </ul>

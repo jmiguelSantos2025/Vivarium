@@ -98,10 +98,12 @@ export default function Historico() {
                 <Image src="/assets/history_svgrepo.com.png" alt="hist" width={30} height={30} className="hsensor-icon2" />
                 Histórico de dados
               </li>
-                <li id="IA" onClick={() => router.push("/TeachableIA")}>
+                
+            </div>
+            <li id="IA" onClick={() => router.push("/TeachableIA")}>
+                  <img src="/assets/icons8-inteligência-artificial-100.png" style={{width: "25px",height: "25px",}} alt="IA" />
               IA
             </li>
-            </div>
           </ul>
         </nav>
       </aside>

@@ -27,8 +27,8 @@
 
 /* Área da webcam */
 .teachable-webcam {
-  width: 224px;
-  height: 224px;
+  width: 424px;
+  height: 424px;
   margin: 20px auto;
   border: 3px solid #ffffff;
   border-radius: 12px;
