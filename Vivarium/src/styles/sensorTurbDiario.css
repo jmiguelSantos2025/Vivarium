@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #0948A5;
+    background-color: #0B3D2E; /* Verde escuro */
     height: 100vh;
     overflow: hidden;
 }
@@ -22,8 +22,8 @@ body {
 /* ===== ASIDE MENU ===== */
 aside {
     width: 250px;
-    background-color: #0948A5;
-    color: white;
+    background-color: #0B3D2E; /* Verde escuro */
+    color: #DFF6DD; /* Verde claro para o texto */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -57,20 +57,22 @@ aside {
     padding: 10px 15px;
     border-radius: 10px;
     transition: background 0.2s;
+    color: #DFF6DD;
 }
 
 .stud-options li:hover {
-    background-color: #023581;
+    background-color: #20734F; /* Verde médio */
+    color: #E0FFE0; /* Verde claro no hover */
 }
 
 #SENSOR1 {
-    background-color: #023581;
+    background-color: #20734F; /* Verde médio */
 }
 
 /* ===== CONTENT AREA ===== */
 .stud-content {
     margin-top: 6%;
-    background-color: #f6f6f6;
+    background-color: #E6F0EA; /* Verde muito claro */
     border-top-left-radius: 30px;
     flex: 1;
     display: flex;
@@ -85,11 +87,12 @@ header {
     right: 0;
     height: 80px;
     width: 100%;
-    background-color: #0948A5;
+    background-color: #145C43; /* Verde escuro */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
+    color: #DFF6DD;
 }
 
 main {
@@ -99,7 +102,7 @@ main {
 }
 
 main h2 {
-    color: #14466C;
+    color: #2E6E44; /* Verde médio */
     font-weight: 600;
     margin: 0;
 }
@@ -108,11 +111,13 @@ main h2 {
 .stud-icon {
     width: 20px;
     height: 20px;
+    fill: #20734F; /* Verde médio para ícones */
 }
 
 .stud-icon2 {
     height: 30px;
     width: 30px;
+    fill: #20734F;
 }
 
 .stud-perfil {
@@ -137,6 +142,7 @@ main h2 {
 
 .stud-aside p {
     font-size: 18px;
+    color: #145C43; /* Verde escuro */
 }
 
 .stud-logo {
@@ -146,17 +152,18 @@ main h2 {
 
 .stud-title span {
     font-size: 16px;
-    color: #ABABAB;
+    color: #7AAE8D; /* Verde claro */
 }
 
 .stud-title {
     margin-bottom: 30px;
+    color: #145C43;
 }
 
 .stud-card {
     width: 100%;
     height: 90%;
-    background-color: #E7E7E7;
+    background-color: #C8E6C9; /* Verde claro */
     border-radius: 20px;
     margin-top: -50px;
 }
@@ -170,7 +177,7 @@ main h2 {
 }
 
 .stud-op-up button {
-    background-color: #023581;
+    background-color: #20734F; /* Verde médio */
     border: none;
     width: 160px;
     height: 30px;
@@ -181,19 +188,20 @@ main h2 {
 }
 
 .stud-op-up button:hover {
-    background-color: white;
-    color: black;
+    background-color: #145C43; /* Verde escuro */
+    color: #DFF6DD; /* Verde claro */
 }
 
 .stud-op-up #Turbidez1 {
-    background-color: #fff;
-    color: black;
+    background-color: #DFF6DD; /* Verde muito claro */
+    color: #145C43; /* Verde escuro */
 }
 
 .stud-h1-title {
     padding: 2%;
     display: flex;
     flex-direction: row;
+    color: #145C43;
 }
 
 .stud-title-with-buttons {
@@ -214,9 +222,9 @@ main h2 {
 }
 
 .stud-side-btn {
-    background-color: white;
-    color: #000;
-    border: 1px solid #ccc;
+    background-color: #DFF6DD; /* Verde muito claro */
+    color: #145C43; /* Verde escuro */
+    border: 1px solid #20734F; /* Verde médio */
     border-radius: 8px;
     padding: 8px 16px;
     cursor: pointer;
@@ -227,16 +235,16 @@ main h2 {
 }
 
 #BUTTON {
-    background-color: #E7E7E7;
+    background-color: #C8E6C9; /* Verde claro */
 }
 
 .stud-side-btn:hover {
-    background-color: #eee;
+    background-color: #B0D9B1; /* Verde claro hover */
 }
 
 .stud-chart-area {
     height: 300px;
-    background-color: #E7E7E7;
+    background-color: #C8E6C9; /* Verde claro */
     margin: 20px;
     border-radius: 10px;
 }

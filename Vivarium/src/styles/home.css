@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #0948A5;
+  background-color: #27AE60; /* Verde principal */
   height: 100vh;
   overflow: hidden;
 }
@@ -22,7 +22,7 @@ body {
 /* ===== ASIDE MENU ===== */
 aside {
   width: 250px;
-  background-color: #0948A5;
+  background-color: #27AE60;
   color: white;
   padding: 20px;
   display: flex;
@@ -38,7 +38,7 @@ aside {
 }
 
 .home-options {
-  width: 40vh;
+  width: 100%;
 }
 
 .home-options ul {
@@ -46,31 +46,31 @@ aside {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .home-options li {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   cursor: pointer;
   padding: 10px 15px;
   border-radius: 10px;
-  transition: background 0.2s;
+  transition: background 0.3s ease;
 }
 
 .home-options li:hover {
-  background-color: #023581;
+  background-color: #1ABC9C; /* Verde água */
 }
 
 #HOME1 {
-  background-color: #023581;
+  background-color: #1ABC9C;
 }
 
 /* ===== CONTENT AREA ===== */
 .home-content {
   margin-top: 6%;
-  background-color: #f6f6f6;
+  background-color: #F0FFF4;
   border-top-left-radius: 30px;
   flex: 1;
   display: flex;
@@ -85,7 +85,7 @@ header {
   right: 0;
   height: 80px;
   width: 100%;
-  background-color: #0948A5;
+  background-color: #27AE60;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -99,27 +99,34 @@ main {
 }
 
 main h2 {
-  color: #14466C;
+  color: #117A65;
   font-weight: 600;
   margin-bottom: 30px;
 }
 
+/* ===== CARDS ===== */
 .home-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  justify-content: flex-start;
 }
 
 .home-card {
-  background: #E7E7E7;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  background: #E7F8EF;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   padding: 20px;
   width: 300px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
 }
 
 .home-card h3 {
-  color: #14466C;
+  color: #117A65;
   font-size: 18px;
   font-weight: 600;
 }
@@ -143,10 +150,10 @@ main h2 {
 
 .home-dados {
   display: flex;
-  background-color: #14466C;
-  padding: 5px 15px;
+  background-color: #117A65;
+  padding: 6px 15px;
   border-radius: 20px;
-  width: 30vh;
+  width: 100%;
   font-weight: 600;
   align-items: center;
   justify-content: center;
@@ -154,15 +161,16 @@ main h2 {
 
 .home-dados p {
   color: #fff;
-  font: 18px;
+  font-size: 16px;
+  text-align: center;
 }
 
 .home-card small {
   font-size: 13px;
-  color: #444;
+  color: #666;
 }
 
-/* ===== ICON STYLES ===== */
+/* ===== ICONS ===== */
 .home-icon {
   width: 20px;
   height: 20px;
@@ -190,7 +198,8 @@ main h2 {
   flex-direction: row;
   gap: 10px;
   align-items: center;
-  margin-top: 20%;
+  margin-top: auto;
+  padding-top: 40px;
 }
 
 .home-aside p {

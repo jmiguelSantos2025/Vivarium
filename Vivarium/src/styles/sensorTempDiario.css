@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #0948A5;
+    background-color: #0B3D35; /* azul-esverdeado escuro */
     height: 100vh;
     overflow: hidden;
 }
@@ -22,8 +22,8 @@ body {
 /* ===== ASIDE MENU ===== */
 aside {
     width: 250px;
-    background-color: #0948A5;
-    color: white;
+    background-color: #0B3D35; /* azul-esverdeado escuro */
+    color: #D9F0E5; /* verde claro para texto */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -60,30 +60,23 @@ aside {
 }
 
 .sted-options li:hover {
-    background-color: #023581;
+    background-color: #14675B; /* verde médio */
 }
 
 #SENSOR1 {
-    background-color: #023581;
+    background-color: #14675B; /* verde médio */
 }
 
 /* ===== CONTENT AREA ===== */
 .sted-content {
     margin-top: 6%;
-    background-color: #f6f6f6;
+    background-color: #D9F0E5; /* verde claro */
     border-top-left-radius: 30px;
     flex: 1;
     display: flex;
     flex-direction: column;
     position: relative;
-    flex-direction: column;
-    position: relative;
     height: calc(100vh - 80px);
-    /* flex: 1;
-  background-color: #f6f6f6;
-  border-top-left-radius: 30px;
-  display: flex;
-  flex-direction: column; */
 }
 
 header {
@@ -92,7 +85,7 @@ header {
     right: 0;
     height: 80px;
     width: 100%;
-    background-color: #0948A5;
+    background-color: #0B3D35; /* azul-esverdeado escuro */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -106,7 +99,7 @@ main {
 }
 
 main h2 {
-    color: #14466C;
+    color: #14466C; /* azul mais escuro */
     font-weight: 600;
     margin: 0;
 }
@@ -115,11 +108,13 @@ main h2 {
 .sted-icon {
     width: 20px;
     height: 20px;
+    fill: #0B3D35; /* ícones na cor azul-esverdeado */
 }
 
 .sted-icon2 {
     height: 30px;
     width: 30px;
+    fill: #0B3D35;
 }
 
 .sted-perfil {
@@ -144,6 +139,7 @@ main h2 {
 
 .sted-aside p {
     font-size: 18px;
+    color: #0B3D35;
 }
 
 .sted-logo {
@@ -151,25 +147,24 @@ main h2 {
     height: 40px;
 }
 
-.sted-title span{
+.sted-title span {
     font-size: 16px;
-    color: #ABABAB;
+    color: #4B7B68; /* verde médio */
 }
 
-.sted-title{
+.sted-title {
     margin-bottom: 30px;
-
 }
 
-.sted-card{
+.sted-card {
     width: 100%;
     height: 90%;
-    background-color: #E7E7E7;
+    background-color: #B6D7C1; /* verde pastel claro */
     border-radius: 20px;
     margin-top: -50px;
 }
 
-.sted-op-up{
+.sted-op-up {
     display: flex;
     flex-direction: row;
     width: 60%;
@@ -177,8 +172,8 @@ main h2 {
     margin-left: 0;
 }
 
-.sted-op-up button{
-    background-color: #023581;
+.sted-op-up button {
+    background-color: #14675B; /* verde médio */
     border: none;
     width: 160px;
     height: 30px;
@@ -188,14 +183,14 @@ main h2 {
     transition: 0.5s;
 }
 
-.sted-op-up button:hover{
-    background-color: white;
-    color: black;
+.sted-op-up button:hover {
+    background-color: #D9F0E5; /* verde claro */
+    color: #0B3D35; /* texto escuro */
 }
 
-.sted-op-up #Temperatura1{
-    background-color: #fff;
-    color: black;
+.sted-op-up #Temperatura1 {
+    background-color: #D9F0E5; /* verde claro */
+    color: #0B3D35; /* texto escuro */
 }
 
 .sted-h1-title {
@@ -222,9 +217,9 @@ main h2 {
 }
 
 .sted-side-btn {
-    background-color: white;
-    color: #000;
-    border: 1px solid #ccc;
+    background-color: #D9F0E5; /* verde claro */
+    color: #0B3D35; /* texto escuro */
+    border: 1px solid #14675B; /* verde médio */
     border-radius: 8px;
     padding: 8px 16px;
     cursor: pointer;
@@ -235,16 +230,16 @@ main h2 {
 }
 
 #BUTTON {
-    background-color: #E7E7E7;
+    background-color: #B6D7C1; /* verde pastel claro */
 }
 
 .sted-side-btn:hover {
-    background-color: #eee;
+    background-color: #C4E3D1; /* verde claro hover */
 }
 
 .sted-chart-area {
     height: 300px;
-    background-color: #E7E7E7;
+    background-color: #B6D7C1; /* verde pastel claro */
     margin: 20px;
     border-radius: 10px;
 }

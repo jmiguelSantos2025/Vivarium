@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #0948A5;
+    background-color: #00695C; /* verde-azulado escuro */
     height: 100vh;
     overflow: hidden;
 }
@@ -22,7 +22,7 @@ body {
 /* ===== ASIDE MENU ===== */
 aside {
     width: 250px;
-    background-color: #0948A5;
+    background-color: #00695C;
     color: white;
     padding: 20px;
     display: flex;
@@ -60,13 +60,12 @@ aside {
 }
 
 .hsensor-options li:hover {
-    background-color: #023581;
+    background-color: #004D40;
 }
 
 #HIST1 {
-    background-color: #023581;
+    background-color: #004D40;
 }
-
 
 /* ===== CONTENT AREA ===== */
 .hsensor-content {
@@ -77,14 +76,9 @@ aside {
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow-y: auto; 
-    padding-bottom: 20px; 
-    height: calc(100vh - 80px); 
-    /* flex: 1;
-  background-color: #f6f6f6;
-  border-top-left-radius: 30px;
-  display: flex;
-  flex-direction: column; */
+    overflow-y: auto;
+    padding-bottom: 20px;
+    height: calc(100vh - 80px);
 }
 
 header {
@@ -93,7 +87,7 @@ header {
     right: 0;
     height: 80px;
     width: 100%;
-    background-color: #0948A5;
+    background-color: #00695C;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,29 +101,17 @@ main {
 }
 
 main h2 {
-    color: #14466C;
+    color: #144D4A;
     font-weight: 600;
     margin: 0;
 }
 
 /* ===== ICON STYLES ===== */
-.hsensor-icon {
-    width: 20px;
-    height: 20px;
-}
-
-.hsensor-icon2 {
-    height: 30px;
-    width: 30px;
-}
-
-.hsensor-perfil {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-}
-
-.hsensor-menu {
+.hsensor-icon,
+.hsensor-icon2,
+.hsensor-perfil,
+.hsensor-menu,
+.hsensor-logo {
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -147,11 +129,6 @@ main h2 {
     font-size: 18px;
 }
 
-.hsensor-logo {
-    width: 40px;
-    height: 40px;
-}
-
 .hsensor-title span {
     font-size: 16px;
     color: #ABABAB;
@@ -164,12 +141,12 @@ main h2 {
 .hsensor-card {
     width: 100%;
     height: 95vh;
-    background-color: #E7E7E7;
+    background-color: #E0F2F1;
     border-radius: 20px;
 }
 
 .hsensor-sub-div {
-    background-color: #023581;
+    background-color: #004D40;
     border-radius: 20px;
 }
 
@@ -219,7 +196,7 @@ main h2 {
 
 .hsensor-info {
     display: flex;
-    background-color: #0948A5;
+    background-color: #00695C;
     color: #fff;
     height: 60px;
     width: 130px;
@@ -231,23 +208,20 @@ main h2 {
 }
 
 .hsensor-date-inputs {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
 .hsensor-input-data,
 .hsensor-input-hora {
-  background-color: #E7E7E7;
-  border: 1px solid #0948A5;
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-size: 14px;
-  color: #333;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  outline: none;
-  transition: border 0.2s ease-in-out;
+    background-color: #E0F2F1;
+    border: 1px solid #00695C;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border 0.2s ease-in-out;
 }
-
-
